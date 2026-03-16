@@ -1,3 +1,6 @@
+# Version 1.0.7
+- Made improvement to make weather fetching interactive through rich status updates
+
 # Version 1.0.6
 - Improved interactivity of the application to ask for API key if it is not there.
 

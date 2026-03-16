@@ -69,8 +69,8 @@ Like the original version of mine, this version also uses the ASCII art for weat
 
 ## 📝 Changelog
 
-# Version 1.0.6 (Latest release)
-- Improved interactivity of the application to ask for API key if it is not there.
+# Version 1.0.7 (Latest release)
+- Made improvement to make weather fetching interactive through rich status updates
 
 The complete [changelog](https://github.com/shved-t/mridumanda/blob/main/LOG.md) can be found here.
 
