@@ -71,7 +71,7 @@ def print_formatted_weather(weather):
 def print_ascii_weather(weather):
     os.system('clear')
     
-    ascii = None
+    ascii = []
     weather_data = [
         " ",
         f"{weather[0]}, {weather[1]}",
@@ -80,36 +80,38 @@ def print_ascii_weather(weather):
         f"{weather[4]}°C",
         f"{weather[6]}%",
         " ",
-        f"{weather[8]}°C \u2b06",
-        f"{weather[9]}°C \u2b07",
+        f"{weather[5]}°C feels like",
         f"{weather[7]} hPa",
+        f"{weather[10]} \u25b2 / {weather[11]} \u25bc",
         " "
     ]
-    
+
     if 200 <= weather[2] < 300:
-        ascii = ascii_arts.ascii_arts.thunder
-    # elif 300 <= weather[2] < 400:
-        # condition = ascii_arts.ascii_arts.drizzle // to be implemented
+        ascii.extend(ascii_arts.ascii_arts.thunder)
+    elif 300 <= weather[2] < 400:
+        ascii.extend(ascii_arts.ascii_arts.drizzle)
     elif 500 <= weather[2] < 600:
-        ascii = ascii_arts.ascii_arts.rain
+        ascii.extend(ascii_arts.ascii_arts.rain)
     elif 600 <= weather[2] < 700:
-        ascii = ascii_arts.ascii_arts.snow
+        ascii.extend(ascii_arts.ascii_arts.snow)
     elif weather[2] == 711:
-        ascii = ascii_arts.ascii_arts.smoke
+        ascii.extend(ascii_arts.ascii_arts.smoke)
+    elif weather[2] == 721:
+        ascii.extend(ascii_arts.ascii_arts.haze)
     elif weather[2] == 731:
-        ascii = ascii_arts.ascii_arts.dust
+        ascii.extend(ascii_arts.ascii_arts.dust)
     elif weather[2] == 741:
-        ascii = ascii_arts.ascii_arts.fog
+        ascii.extend(ascii_arts.ascii_arts.fog)
     elif weather[2] == 762:
-        ascii = ascii_arts.ascii_arts.ash
+        ascii.extend(ascii_arts.ascii_arts.ash)
     elif weather[2] == 771:
-        ascii = ascii_arts.ascii_arts.squall
+        ascii.extend(ascii_arts.ascii_arts.squall)
     elif weather[2] == 781:
-        ascii = ascii_arts.ascii_arts.tornado
+        ascii.extend(ascii_arts.ascii_arts.tornado)
     elif weather[2] == 800:
-        ascii = ascii_arts.ascii_arts.clear_day
+        ascii.extend(ascii_arts.ascii_arts.clear_day)
     elif 801 <= weather[2] < 900:
-        ascii = ascii_arts.ascii_arts.clouds
+        ascii.extend(ascii_arts.ascii_arts.clouds)
         
     for index, element in enumerate(ascii):
         print(f"{element} \t {weather_data[index]}")

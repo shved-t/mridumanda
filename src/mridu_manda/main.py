@@ -1,5 +1,4 @@
 import sys
-import threading
 import time
 from mridu_manda import fetch_city, http_call, parse_weather, print_weather
 from rich.console import Console
@@ -21,11 +20,12 @@ def main():
         city = fetch_city.manual_city()
 
         with console.status("Fetching weather...", spinner="dqpb") as status:
+            time.sleep(0.5)
             weather_report = http_call.make_call('w', city)
-            time.sleep(1)
             status.update("Generating report...", spinner="dqpb")
+            time.sleep(0.5)
             formatted_weather = parse_weather.weather_access(weather_report)
-            time.sleep(1)
+
     else:
 
         print("Welcome to MriduManda")
@@ -36,14 +36,15 @@ def main():
         console.print("Auto city detection mode enabled!", style="bold green")
 
         with console.status("Detecting city...", spinner="dqpb") as status:
+            time.sleep(0.5)
             city = fetch_city.auto_city()
-            time.sleep(1)
             status.update("Fetching weather...", spinner="dqpb")
+            time.sleep(0.5)
             weather_report = http_call.make_call('w', city)
-            time.sleep(1)
             status.update("Generating report...", spinner="dqpb")
+            time.sleep(0.5)
             formatted_weather = parse_weather.weather_access(weather_report)
-            time.sleep(1)
+            
     
     status.stop()
     print_weather.display(formatted_weather)

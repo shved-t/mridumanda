@@ -1,3 +1,7 @@
+from datetime import datetime
+
+
+
 def weather_access(weather):
     
     city_weather = weather['name']
@@ -10,8 +14,10 @@ def weather_access(weather):
     pressure = weather['main']['pressure']
     temperature_max = weather['main']['temp_max']
     temperature_min = weather['main']['temp_min']
-    
-    return [city_weather, country, weather_id, condition, temperature, feels_like, humidity, pressure, temperature_max, temperature_min]
+    sunrise_time = datetime.fromtimestamp(weather['sys']['sunrise']).strftime('%H:%M:%S')
+    sunset_time = datetime.fromtimestamp(weather['sys']['sunset']).strftime('%H:%M:%S')
+
+    return [city_weather, country, weather_id, condition, temperature, feels_like, humidity, pressure, temperature_max, temperature_min, sunrise_time, sunset_time]
 
 
 '''
@@ -25,4 +31,6 @@ def weather_access(weather):
     7  -> pressure
     8  -> temperature max
     9  -> temperature min
+    10 -> sunrise time
+    11 -> sunset time
 '''

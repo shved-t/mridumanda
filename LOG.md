@@ -1,3 +1,7 @@
+# Version 1.0.8
+- Added sunrise and sunset time with feels like for ascii weather representation
+- Fixed the bug in manual city enter where the spinner would run infinitely.
+
 # Version 1.0.7
 - Made improvement to make weather fetching interactive through rich status updates
 
