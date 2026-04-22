@@ -69,9 +69,9 @@ Like the original version of mine, this version also uses the ASCII art for weat
 
 ## 📝 Changelog
 
-# Version 1.0.8 (Latest release)
-- Added sunrise and sunset time with feels like for ascii weather representation
-- Fixed the bug in manual city enter where the spinner would run infinitely.
+# Version 1.0.9 (Latest release)
+- Added report generation
+- Improved miscellaneous codes
 
 The complete [changelog](https://github.com/shved-t/mridumanda/blob/main/LOG.md) can be found here.
 

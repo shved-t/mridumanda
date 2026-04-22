@@ -1,3 +1,7 @@
+# Version 1.0.9
+- Added report generation
+- Improved miscellaneous codes
+
 # Version 1.0.8
 - Added sunrise and sunset time with feels like for ascii weather representation
 - Fixed the bug in manual city enter where the spinner would run infinitely.
