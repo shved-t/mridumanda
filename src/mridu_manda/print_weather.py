@@ -115,3 +115,19 @@ def print_ascii_weather(weather):
         
     for index, element in enumerate(ascii):
         print(f"{element} \t {weather_data[index]}")
+
+
+def print_report(report):
+    os.system('clear')
+
+    report_table = Table(show_header=True, header_style="bold magenta", border_style="dim")
+    report_table.add_column("Date", style="bold cyan")
+    report_table.add_column("Location", style="bold green")
+    report_table.add_column("Temperature", style="bold yellow")
+
+    for weather in report:
+        report_table.add_row(weather[0], weather[1], f"{weather[2]}°C")
+    
+    console = Console()
+    console.print(report_table)
+

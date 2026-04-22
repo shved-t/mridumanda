@@ -1,6 +1,6 @@
 import sys
 import time
-from mridu_manda import fetch_city, http_call, parse_weather, print_weather
+from mridu_manda import fetch_city, http_call, parse_weather, print_weather, report_generation
 from rich.console import Console
 
 
@@ -48,3 +48,9 @@ def main():
     
     status.stop()
     print_weather.display(formatted_weather)
+
+    print("\nDo you want to generate the weather report? (y/n)")
+    choice = input().lower()
+
+    if choice == "y":
+        report_generation.report_generation()

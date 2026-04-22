@@ -64,3 +64,14 @@ def save_weather(weather):
         file.seek(0)
         json.dump(temp_json, file, indent=4)
         file.truncate()
+
+
+def load_weather():
+
+    loaded_weather_report = None
+
+    with WEATHER_FILE.open("r") as file:
+        temp_json = json.load(file)
+        loaded_weather_report = temp_json
+    
+    return loaded_weather_report
